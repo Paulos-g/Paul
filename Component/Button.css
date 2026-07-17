@@ -1,0 +1,77 @@
+/* Reusable button styles */
+.Btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 46px;
+  padding: 0 18px;
+  border-radius: 9999px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease;
+  white-space: nowrap;
+  background: linear-gradient(90deg, #2aa2ff 0%, #2fe1c7 100%);
+  color: #042032;
+  box-shadow: 0 10px 28px rgba(45, 125, 255, 0.18);
+}
+
+.Btn:hover {
+  transform: translateY(-1px);
+}
+
+.Btn:focus-visible {
+  outline: 2px solid rgba(45, 125, 255, 0.3);
+  outline-offset: 3px;
+}
+
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #2aa2ff 0%, #2fe1c7 100%);
+  color: #042032;
+  box-shadow: 0 10px 28px rgba(45, 125, 255, 0.18);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(90deg, #1d8be4 0%, #26c6aa 100%) !important;
+}
+
+.btn-outline {
+  background: rgba(255, 255, 255, 0.04);
+  color: #e6eef8;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.Btn:active {
+  transform: translateY(0);
+}
+.btn {
+  background: linear-gradient(90deg, #2aa2ff 0%, #2fe1c7 100%);
+  color: #aabac4;
+  box-shadow: 0 10px 28px rgba(45, 125, 255, 0.459);
+  background: transparent;
+  border: solid #1d8be4;
+}

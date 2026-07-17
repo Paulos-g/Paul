@@ -1,0 +1,1072 @@
+/* Global styles (pure CSS, Tailwind removed) */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+[id] {
+  scroll-margin-top: 80px;
+}
+.cursor {
+  z-index: 9999 !important;
+}
+body {
+  margin: 0;
+  background-color: #030714;
+  color: #e6eef8;
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden; /* prevents accidental horizontal scroll from fixed-width children */
+}
+
+a {
+  color: inherit;
+}
+
+/* Utility */
+.container {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(
+    24px,
+    6vw,
+    150px
+  ); /* was fixed 150px, now scales down on smaller screens */
+}
+
+/* Hero actions (buttons) */
+.hero-actions {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap; /* allow buttons to wrap instead of overflowing on narrow screens */
+  gap: 12px;
+  align-items: center;
+}
+.typewriter {
+  font-family: "Special Elite", monospace;
+  font-size: clamp(
+    1.4rem,
+    5vw,
+    2.5rem
+  ); /* was fixed 2.5rem, now scales down on mobile */
+}
+.social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.social-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.social-icons a {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  transform: translateY(-4px) scale(1.08);
+  background: rgba(255, 255, 255, 0.15);
+  color: #d4af37; /* Change to your accent color */
+  border-color: #d4af37;
+}
+
+.social-icons svg {
+  width: 20px;
+  height: 20px;
+}
+.scroll-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 2rem; /* Adjust spacing as needed */
+  margin-bottom: 7rem;
+}
+
+.scroll-indicator {
+  font-size: 2rem;
+  cursor: pointer;
+}
+.hero-title {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-weight: 700;
+  letter-spacing: clamp(
+    -1.5px,
+    -0.3vw,
+    -3px
+  ); /* negative tracking scaled down so tight letter-spacing doesn't clip small text */
+
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #d9d9d9 35%,
+    #7df9ff 65%,
+    #ffffff 100%
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  text-align: center;
+}
+/* Container & Base Styles */
+.portfolio-container {
+  background-color: #030712;
+  color: #f3f4f6;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+  padding: clamp(1.5rem, 5vw, 3rem) clamp(1rem, 4vw, 2rem); /* scales padding for mobile */
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.main-title {
+  text-align: center;
+  color: #38bdf8;
+  font-size: clamp(1.4rem, 4vw, 2rem); /* scales down on mobile */
+  font-weight: 700;
+  margin-bottom: clamp(1.5rem, 4vw, 3rem);
+}
+
+.content-layout {
+  display: flex;
+  flex-wrap: wrap; /* safety net alongside the column switch below */
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+/* Profile Card Styling */
+.profile-card {
+  flex: 1 1 320px; /* added basis so it doesn't get squeezed too narrow before wrapping */
+  background-color: #111827;
+  border: 1px solid #1f2937;
+  border-radius: 12px;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.bio-text {
+  color: #9ca3af;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+}
+
+.info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.icon {
+  color: #38bdf8;
+  font-size: 1.1rem;
+  margin-top: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-label {
+  color: #6b7280;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.info-value {
+  color: #d1d5db;
+  font-size: 0.95rem;
+  margin-top: 2px;
+}
+
+/* Core Areas Tags */
+.section-subtitle {
+  color: #f3f4f6;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  background-color: #1e293b;
+  color: #38bdf8;
+  padding: 0.4rem 0.8rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: 1px solid #334155;
+}
+
+/* Education Timeline Styling */
+.education-section {
+  flex: 1 1 380px; /* added basis so it doesn't get squeezed too narrow before wrapping */
+}
+
+.education-title {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  font-weight: 700;
+  color: #f3f4f6;
+  margin-bottom: 1.5rem;
+}
+
+.education-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.education-card {
+  display: flex;
+  flex-wrap: wrap; /* lets grade badge drop below on very narrow screens instead of overflowing */
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background-color: #111827;
+  border: 1px solid #1f2937;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+
+.edu-degree {
+  font-size: 1.1rem;
+  color: #ffffff; /* Bold and White */
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+}
+
+.institution {
+  color: #38bdf8; /* Light Blue */
+  font-size: 0.95rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.timeline {
+  color: #6b7280; /* Smaller and Grey */
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.card-right {
+  display: flex;
+  align-items: center;
+}
+
+.grade {
+  color: #9ca3af;
+  font-size: 0.85rem;
+  font-weight: 500;
+  background-color: #1e293b;
+  padding: 0.4rem 0.75rem;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+/* Responsive Layout */
+@media (max-width: 900px) {
+  .image-container {
+    margin: 0 auto;
+  }
+  .content-layout {
+    flex-direction: column;
+  }
+  .profile-card,
+  .education-section {
+    width: 100%;
+    flex-basis: auto;
+  }
+  .Skill-back {
+    height: auto !important; /* was 100% !important, which relied on a fixed 800px parent; auto lets content define height */
+    min-height: 600px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+    gap: 20px;
+  }
+  .profile-card,
+  .education-card {
+    padding: 1.25rem;
+  }
+  .portfolio-container {
+    padding: 1.25rem 1rem;
+  }
+}
+
+/* Base container styling */
+.navbar-skill {
+  display: flex;
+  gap: 8px;
+  background-color: #18222d; /* Dark navbar background */
+  padding: 12px;
+  border-radius: 12px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* Individual tab button styles */
+.nav-item {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  border: 1px solid transparent;
+  color: #94a3b8; /* Muted gray text color for inactive items */
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  white-space: nowrap;
+}
+
+/* Sizing for FontAwesome React Icons */
+.nav-icon {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
+
+/* Hover state for inactive tabs */
+.nav-item:hover {
+  color: #e2e8f0;
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* Active tab state */
+.nav-item.active {
+  background-color: #2563eb; /* Vibrant royal blue */
+  color: #ffffff;
+  border: 1.5px solid #3b82f6; /* Subtle lighter border highlight */
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+@media (max-width: 600px) {
+  .nav-item {
+    padding: 8px 14px;
+    font-size: 13px;
+    gap: 6px;
+  }
+}
+
+.Skill-back {
+  background-color: #0e151d !important;
+  height: 800px !important;
+}
+.scrambled-text {
+  color: red !important;
+}
+/* Container holding all the language cards */
+.language-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(140px, 200px)
+  ); /* was a fixed 200px track, now flexes between 140-200px */
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  justify-content: center;
+}
+/* Individual Card Styling */
+.language-card {
+  background-color: #0b1426;
+  border: 1px solid #1a2942;
+  border-radius: 12px;
+  padding: 2.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  /* ADD THIS LINE FOR THE GLOW */
+  box-shadow: 0 0 20px rgba(37, 99, 235, 0.15);
+}
+
+/* Hover effect for interactive feel */
+.language-card:hover {
+  transform: translateY(-4px);
+  border-color: #2563eb; /* Subtle blue glow on hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Icon Circular Wrapper */
+.icon-wrapper {
+  background-color: #112240; /* Slightly lighter blue/grey for the circle */
+  color: #38bdf8; /* Vibrant sky blue for the icon code */
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+/* Typography for the text */
+.language-name {
+  color: #ffffff;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive tweaks for smaller mobile phones */
+@media (max-width: 480px) {
+  .language-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+  }
+
+  .language-card {
+    padding: 1.8rem 1rem;
+  }
+
+  .icon-wrapper {
+    width: 48px;
+    height: 48px;
+    font-size: 1.25rem;
+  }
+
+  .language-name {
+    font-size: 1rem;
+  }
+
+  .Skill-back {
+    height: auto !important; /* replaces the previously commented-out/empty rule; prevents huge empty space on small screens */
+    min-height: 500px !important;
+  }
+}
+/* Main section container with the subtle dark border */
+.ai-tooling-container {
+  background-color: transparent;
+  border: 1px solid #1a2942; /* Matches the outer layout borders */
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  margin-top: 2.5rem;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  text-align: center; /* Centers the title */
+}
+
+/* Section Header Styling */
+.tooling-title {
+  color: #ffffff;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  letter-spacing: 0.5px;
+}
+
+/* Flexbox container for the badges to wrap cleanly */
+.badges-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centers the pills horizontally */
+  gap: 1rem; /* Spacing between the badges */
+}
+
+/* Individual Pill-Shaped Badges */
+.tool-badge {
+  color: #e2e8f0; /* Crisp off-white text */
+  background-color: #0b1426; /* Dark background matching the cards */
+  border: 1px solid #1a2942; /* Subtle border matching the theme */
+  border-radius: 50px; /* Gives the perfect capsule/pill shape */
+  padding: 0.6rem 1.6rem;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+/* Hover Effect for the Badges */
+.tool-badge:hover {
+  background-color: #112240; /* Slightly lighter blue-grey on hover */
+  border-color: #38bdf8; /* Vibrant sky blue border highlights on hover */
+  color: #ffffff;
+  transform: translateY(-2px); /* Soft lift animation */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 600px) {
+  .ai-tooling-container {
+    padding: 1.5rem 1rem;
+  }
+
+  .tooling-title {
+    font-size: 1.15rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .tool-badge {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.85rem;
+  }
+}
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+
+  /* --- The Glassy Background --- */
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+  backdrop-filter: blur(12px); /* Frosted glass blur effect */
+  -webkit-backdrop-filter: blur(12px); /* Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Soft white border for a glass edge */
+  border-radius: 16px; /* Rounded corners look best with glass */
+  padding: 2rem; /* Gives the content some breathing room */
+
+  /* --- The Shining Glow Behind --- */
+  /* This creates a soft, colorful light bleeding out from behind the container */
+  box-shadow:
+    0 0 40px 10px rgba(255, 255, 255, 0.15),
+    0 0 100px 30px rgba(0, 150, 255, 0.3);
+  width: min(
+    300px,
+    80vw
+  ); /* was fixed 300px, now shrinks on narrow viewports */
+  height: min(300px, 80vw);
+  box-sizing: border-box;
+}
+.image-container img {
+  width: 100%; /* was fixed 300px, now fills the responsive container */
+  max-width: 300px;
+  border-radius: 12px;
+  height: 100%;
+  max-height: 300px;
+  object-fit: cover;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: clamp(1rem, 4vw, 2rem); /* scales padding on mobile */
+  box-sizing: border-box;
+}
+/* Project section styling */
+/* Matches the site's dark theme tokens: #0b1426 bg, #1a2942 border, #38bdf8 accent */
+
+.projects {
+  display: flex;
+  align-items: center;
+  transition: all 0.7s ease-out;
+
+  gap: 10rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.5rem;
+  box-sizing: border-box;
+  backdrop-filter: blur(10px); /* Blurs whatever is behind it */
+  border: 1px solid rgba(0, 191, 255, 0.2);
+  margin-bottom: 200px;
+  background:
+    linear-gradient(
+      135px,
+      rgba(255, 255, 255, 0.4) 0%,
+      rgba(255, 255, 255, 0) 50%
+    ),
+    linear-gradient(to bottom, #3a7bd5, #3a6073); /* Deep blue to metallic blue */
+
+  /* Dual-tone blue box shadow for that extra outer glow */
+  box-shadow:
+    0 15px 35px rgba(58, 123, 213, 0.3),
+    0 5px 15px rgba(0, 212, 255, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6); /* Crisp top edge light */
+
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border: 1px solid #1a2942;
+  border-radius: 20px;
+}
+
+.project-image-container {
+  flex: 0 0 auto;
+  width: 45%;
+  max-width: 500px;
+
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 0.75rem;
+  box-sizing: border-box;
+
+  box-shadow:
+    0 0 40px 6px rgba(56, 189, 248, 0.08),
+    0 20px 40px rgba(0, 0, 0, 0.35);
+}
+
+.project-image-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  height: 100%;
+}
+
+.project-description-container {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.project-title {
+  margin: 0;
+  color: #ffffff;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.project-description {
+  margin: 0;
+  color: #9ca3af;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.project-description-container ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.project-description-container ul li {
+  position: relative;
+  padding-left: 1.25rem;
+  color: #d1d5db;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.project-description-container ul li::before {
+  content: "+";
+  position: absolute;
+  left: 0;
+  color: #38bdf8;
+  font-weight: 700;
+}
+
+.project-description-container > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.project-description-container > div span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #38bdf8;
+  background-color: #0b1426;
+  border: 1px solid #1a2942;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.15rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.project-description-container > div span:hover {
+  background-color: #112240;
+  border-color: #38bdf8;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 900px) {
+  .projects {
+    flex-direction: column;
+    padding: 1.75rem;
+    gap: 1.75rem;
+  }
+
+  .project-image-container {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .project-title {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects {
+    padding: 1.25rem;
+    border-radius: 14px;
+  }
+
+  .project-description-container > div span {
+    width: 34px;
+    height: 34px;
+    font-size: 1rem;
+  }
+}
+.projects:hover {
+  box-shadow: 0 10px 28px rgba(45, 125, 255, 2.18);
+  transition: all 0.7s ease-out;
+}
+
+:root {
+  --bg-dark: #070b12;
+  --card-bg: #111827;
+  --border-color: #1f2937;
+  --text-main: #f3f4f6;
+  --text-muted: #9ca3af;
+  --electric-blue: #2563eb;
+  --electric-blue-hover: #3b82f6;
+  --accent-cyan: #06b6d4;
+}
+
+.contact-section {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: "Inter", sans-serif;
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-title {
+  color: var(--accent-cyan);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  width: 100%;
+  max-width: 1100px;
+}
+
+/* Responsive Grid Layout */
+@media (min-width: 850px) {
+  .contact-container {
+    grid-template-columns: 400px 1fr;
+  }
+}
+
+/* Left Side Info Cards Styling */
+.info-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.info-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.icon-wrapper {
+  background-color: #1e293b;
+  color: var(--electric-blue-hover);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem 0;
+  color: var(--text-main);
+}
+
+.info-card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* Social Connections Block */
+.socials-section {
+  margin-top: 1.5rem;
+}
+
+.socials-section h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.socials-cont {
+  display: flex;
+  gap: 1rem;
+}
+
+.socials-cont a {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.socials-cont a:hover {
+  transform: translateY(-4px) scale(1.08);
+  background: rgba(255, 255, 255, 0.15);
+  color: #d4af37;
+  border-color: #d4af37;
+}
+
+/* Right Side Interactive Form Box */
+.form-column {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2.5rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 600px) {
+  .form-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+.form-group input,
+.form-group textarea {
+  background-color: #0f172a;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-main);
+  padding: 0.85rem 1rem;
+  font-size: 0.95rem;
+  font-family: inherit;
+  outline: none;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--electric-blue);
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+/* Custom Submit Button Styling */
+.submit-btn {
+  background-color: var(--electric-blue);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  transition:
+    background-color 0.2s,
+    transform 0.1s;
+  margin-top: 0.5rem;
+}
+
+.submit-btn:hover {
+  background-color: var(--electric-blue-hover);
+}
+
+.submit-btn:active {
+  transform: scale(0.98);
+}
+
+/* Footer Styling */
+.footer-container {
+  width: 100%;
+  background-color: var(--bg-dark);
+  border-top: 1px solid var(--border-color);
+  padding: 1.5rem 0;
+  margin-top: auto;
+}
+
+.footer-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.footer-content p {
+  margin: 0;
+}
+
+.time-display {
+  font-family: "Space Grotesk", "Special Elite", monospace;
+  color: var(--accent-cyan);
+}
