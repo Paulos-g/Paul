@@ -15,7 +15,7 @@ export default function Footer() {
       <div className="footer-content">
         <p>Copyright ©Paul. 2026</p>
         <p className="time-display">
-          {currentTime.toLocaleDateString()} ||{" "}
+          {currentTime.toLocaleDateString()} ||
           {currentTime.toLocaleTimeString()}
         </p>
       </div>
