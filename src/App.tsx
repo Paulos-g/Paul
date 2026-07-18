@@ -13,7 +13,7 @@ import Profession from "../Component/MyProfession";
 import Skills from "../Component/Skills";
 import Image from "../Component/Image";
 import Projects from "../Component/Project";
-import projectsData from "../Component/ProjectData";
+import projectsData from "../Component/Projectdata";
 import Experience from "../Component/Experience";
 import ContactForm from "../Component/Form";
 import Footer from "../Component/Footer";

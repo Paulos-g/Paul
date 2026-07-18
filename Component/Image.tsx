@@ -1,4 +1,3 @@
-import react from "react";
 
 import Meh from "../src/assets/meeh.jpg";
 function Image() {

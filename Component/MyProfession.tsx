@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { FaEnvelope, FaLocationDot, FaGraduationCap } from "react-icons/fa6";
 import { useEffect } from "react";
 import AOS from "aos";
