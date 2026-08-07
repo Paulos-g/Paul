@@ -22,6 +22,11 @@ body,
 body {
   margin: 0;
   background-color: #030714;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-repeat: repeat;
   color: #e6eef8;
   font-family:
     Inter,
