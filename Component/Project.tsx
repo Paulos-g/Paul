@@ -9,6 +9,7 @@ interface ProjectProps {
   list: string[];
   id: number;
   icon: React.ReactNode[]; // or string[] if you're using plain text/emoji instead of icon components}
+  button?: React.ReactNode;
 }
 
 function Projects({
@@ -19,6 +20,7 @@ function Projects({
   list,
   id,
   icon,
+  button,
 }: ProjectProps) {
   useEffect(() => {
     AOS.init({
@@ -44,11 +46,13 @@ function Projects({
             <li key={index}>{item}</li>
           ))}{" "}
         </ul>
-        <div>
+        <div className="project-icons">
           {icon.map((iconEl, index) => (
             <span key={index}>{iconEl}</span>
           ))}
         </div>
+
+        {button ? <div className="project-actions">{button}</div> : null}
       </div>
     </div>
   );

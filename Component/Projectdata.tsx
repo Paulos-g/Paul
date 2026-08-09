@@ -7,6 +7,8 @@ import { FaDatabase, FaServer } from "react-icons/fa6"; // Often requires /fa6 i
 import { SiTypescript } from "react-icons/si";
 import projectImage from "../src/assets/Project.png";
 import projectImage2 from "../src/assets/Project2.png";
+import Button from "./Button.tsx";
+
 // Note: react-icons/fa has no dedicated PostgreSQL or Express brand icons.
 // FaDatabase stands in for PostgreSQL and FaServer stands in for Express below.
 // If you'd rather have exact brand logos, swap these two for
@@ -34,6 +36,14 @@ const projectsData = [
       <FaNodeJs key="node" title="Node.js" />,
       <FaServer key="express" title="Express" />,
     ],
+    button: (
+      <Button
+        text="View Project"
+        onClick={() =>
+          window.open("https://garden-inn-project.vercel.app/", "_blank")
+        }
+      />
+    ),
   },
   {
     id: 2,
@@ -56,6 +66,12 @@ const projectsData = [
       <FaNodeJs key="node" title="Node.js" />,
       <FaServer key="express" title="Express" />,
     ],
+    button: (
+      <Button
+        text="View Project"
+        onClick={() => window.open("https://shematera.netlify.app/", "_blank")}
+      />
+    ),
   },
 ];
 export default projectsData;
