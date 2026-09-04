@@ -1,6 +1,6 @@
 // Font Awesome Icons (fa)
 import { FaCss3Alt, FaNodeJs, FaReact } from "react-icons/fa";
-// Corrected Database and Server icons (if using font awesome names)
+import { SiTailwindcss, SiSupabase, SiPostgresql } from "react-icons/si";
 import { FaDatabase, FaServer } from "react-icons/fa6"; // Often requires /fa6 in newer versions
 
 // Simple Icons (si) - This is where the TypeScript icon actually lives!
@@ -32,6 +32,7 @@ const projectsData = [
     icon: [
       <FaReact key="react" title="React" />,
       <FaCss3Alt key="css" title="CSS3" />,
+
       <FaDatabase key="postgres" title="PostgreSQL" />,
       <FaNodeJs key="node" title="Node.js" />,
       <FaServer key="express" title="Express" />,
@@ -47,21 +48,24 @@ const projectsData = [
   },
   {
     id: 2,
-    title: "Shema Tera",
+    title: "Yeka MKC",
     alt: "Project 2 preview",
     imageUrl: [projectImage2],
     description:
-      "A modern Ethiopian traditional cloth e-Commerce web application built with React and TypeScript, featuring a clean UI and robust functionality.",
+      "A Local church website that gives information about the church services and accepts fundraise payments through chapa.",
     list: [
       "Developed a responsive user interface with a focus on usability and accessibility.",
       "Implemented state management using Redux Toolkit for efficient data flow.",
+      "Integrated Chapa payment to accept payment from any bank including telebirr.",
       "Integrated RESTful APIs to fetch and update data from the backend services.",
       "Conducted thorough testing to ensure code quality and performance.",
     ],
     icon: [
       <SiTypescript key="" title="TypeScript" />,
 
-      <FaCss3Alt key="css" title="CSS3" />,
+      <SiTailwindcss key="tailwind" title="Tailwind CSS" />,
+      <SiSupabase key="supabase" title="Supabase" />,
+      <SiPostgresql key="postgresql" title="PostgreSQL" />,
       <FaDatabase key="postgres" title="PostgreSQL" />,
       <FaNodeJs key="node" title="Node.js" />,
       <FaServer key="express" title="Express" />,
@@ -69,7 +73,7 @@ const projectsData = [
     button: (
       <Button
         text="View Project"
-        onClick={() => window.open("https://shematera.netlify.app/", "_blank")}
+        onClick={() => window.open("https://yeka-mkc.vercel.app/", "_blank")}
       />
     ),
   },
