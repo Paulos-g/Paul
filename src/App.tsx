@@ -57,9 +57,9 @@ function App() {
               sequence={[
                 "Bebi",
                 2000,
-                "a Creative Developer",
+                "a Creative Product Developer",
                 2000,
-                "Software Engineer",
+                "Computer Science student",
                 2000,
                 "I, Build . Deploy . Repair",
                 2000,
@@ -71,10 +71,12 @@ function App() {
               Fullstack Developer & Passionate in music
             </p>
             <p>
-              I enjoy Building Emmersive and highstandard web projects, <br />{" "}
-              focusing on impactfull and modern fullstack projects , using{" "}
-              <br /> modern tech stands i built fast and scalable web apps and{" "}
-              <br />
+              {" "}
+              Hey there My name is Paulos Girmachew a computer science student
+              ant University of Gondar, also music addict 🎵 I enjoy Building
+              Emmersive and highstandard web projects, <br /> focusing on
+              impactfull and modern fullstack projects , using <br /> modern
+              tech stands i built fast and scalable web apps and <br />
               loves learning new techs.{" "}
             </p>
 
