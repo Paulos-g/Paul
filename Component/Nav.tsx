@@ -27,7 +27,7 @@ export default function Nav() {
     <header className="site-nav">
       <div className="nav-inner">
         <a href="#home" className="brand" onClick={closeMenu}>
-          Paulos Girmachew
+          Paul.
         </a>
 
         <button
