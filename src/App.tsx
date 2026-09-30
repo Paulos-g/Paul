@@ -72,10 +72,10 @@ function App() {
             </p>
             <p>
               {" "}
-              Hey there My name is Paulos Girmachew a computer science student
-              ant University of Gondar, also music addict 🎵 I enjoy Building
-              Emmersive and highstandard web projects, <br /> focusing on
-              impactfull and modern fullstack projects , using <br /> modern
+              Hey there My name is Paulos Girmachew a computer <br /> science
+              student ant University of Gondar, also music addict🎵, <br /> I
+              enjoy Building Emmersive and highstandard products <br /> focusing
+              on impactfull and modern fullstack projects , using <br /> modern
               tech stands i built fast and scalable web apps and <br />
               loves learning new techs.{" "}
             </p>

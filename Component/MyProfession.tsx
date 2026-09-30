@@ -60,7 +60,7 @@ function Profession() {
               </div>
               <div className="info-details">
                 <span className="info-label">Education</span>
-                <span className="info-value">B.Tech in Computer Science</span>
+                <span className="info-value">Bsc in Computer Science</span>
               </div>
             </div>
           </div>
@@ -90,7 +90,7 @@ function Profession() {
               <div className="card-left">
                 <h3 className="edu-degree">B.s Computer Science</h3>
                 <p className="institution">University Of Gondar</p>
-                <p className="timeline">Oct 25 - present</p>
+                <p className="timeline">Oct 25 2024 - present</p>
               </div>
               <div className="card-right"></div>
             </div>
