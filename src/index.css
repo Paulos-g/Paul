@@ -39,7 +39,7 @@ body {
     Arial;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden; /* prevents accidental horizontal scroll from fixed-width children */
+  overflow-x: clip;
 }
 
 a {
@@ -355,6 +355,10 @@ a {
 }
 
 @media (max-width: 600px) {
+  html {
+    overflow-x: clip;
+  }
+
   .container {
     padding-left: 16px;
     padding-right: 16px;
@@ -366,6 +370,14 @@ a {
   }
   .portfolio-container {
     padding: 1.25rem 1rem;
+  }
+
+  .info-card > div:last-child {
+    min-width: 0;
+  }
+
+  .info-card p {
+    overflow-wrap: anywhere;
   }
 }
 
@@ -507,6 +519,10 @@ a {
 
 /* Responsive tweaks for smaller mobile phones */
 @media (max-width: 480px) {
+  .image-container {
+    box-sizing: border-box;
+  }
+
   .language-grid {
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: 1rem;
@@ -529,6 +545,14 @@ a {
   .Skill-back {
     height: auto !important; /* replaces the previously commented-out/empty rule; prevents huge empty space on small screens */
     min-height: 500px !important;
+  }
+
+  .contact-section {
+    padding: 3rem 1rem;
+  }
+
+  .form-column {
+    padding: 1.5rem;
   }
 }
 /* Main section container with the subtle dark border */

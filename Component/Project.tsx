@@ -1,6 +1,3 @@
-import AOS from "aos";
-import "aos/dist/aos.css";
-import { useEffect } from "react";
 interface ProjectProps {
   imageUrl: string[];
   title: string;
@@ -22,12 +19,6 @@ function Projects({
   icon,
   button,
 }: ProjectProps) {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: true,
-    });
-  }, []);
   return (
     <div className="projects" data-aos="fade-up" data-aos-delay="100">
       <div className="project-image-container">

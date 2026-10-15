@@ -1,15 +1,6 @@
 import { FaEnvelope, FaLocationDot, FaGraduationCap } from "react-icons/fa6";
-import { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 function Profession() {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: true,
-    });
-  }, []);
   const coreAreas = [
     "Full-Stack Web Development",
     "Backend APIs",

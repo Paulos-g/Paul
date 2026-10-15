@@ -141,6 +141,7 @@
     right: 0;
     height: 100vh;
     width: min(280px, 80vw);
+    box-sizing: border-box;
     padding: 80px 24px 32px;
     background: rgba(7, 11, 17, 0.98);
     backdrop-filter: blur(12px);
