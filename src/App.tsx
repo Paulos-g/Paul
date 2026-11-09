@@ -6,7 +6,8 @@ import { FaEnvelope, FaDownload } from "react-icons/fa";
 import Med from "../Component/Media";
 import ScrollIndicator from "../Component/ScrollBar";
 import Hero from "../Component/ScrambledText";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Profession from "../Component/MyProfession";
@@ -18,6 +19,8 @@ import Experience from "../Component/Experience";
 import ContactForm from "../Component/Form";
 import Footer from "../Component/Footer";
 function App() {
+  const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
+
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -57,9 +60,9 @@ function App() {
               sequence={[
                 "Bebi",
                 2000,
-                "a Creative Product Developer",
+                "a Creative Developer",
                 2000,
-                "Computer Science student",
+                "Cybersecurity Enthusiast",
                 2000,
                 "I, Build . Deploy . Repair",
                 2000,
@@ -115,12 +118,47 @@ function App() {
 
         <Skills />
       </div>
-      <div id="projects">
+      <section id="projects" aria-label="Featured projects">
         <Hero text="Things I built" />
-        {projectsData.map((p) => (
-          <Projects key={p.id} {...p} />
-        ))}
-      </div>
+        <div
+          className="project-carousel"
+          role="region"
+          aria-roledescription="carousel"
+          aria-label="Portfolio projects"
+        >
+          <Projects
+            key={projectsData[currentProjectIndex].id}
+            {...projectsData[currentProjectIndex]}
+          />
+          <div className="project-carousel-controls">
+            <button
+              type="button"
+              className="project-carousel-button"
+              aria-label="Previous project"
+              onClick={() =>
+                setCurrentProjectIndex(
+                  (index) => (index - 1 + projectsData.length) % projectsData.length,
+                )
+              }
+            >
+              <FaChevronLeft aria-hidden="true" />
+            </button>
+            <span className="project-carousel-position" aria-live="polite">
+              Project {currentProjectIndex + 1} of {projectsData.length}
+            </span>
+            <button
+              type="button"
+              className="project-carousel-button"
+              aria-label="Next project"
+              onClick={() =>
+                setCurrentProjectIndex((index) => (index + 1) % projectsData.length)
+              }
+            >
+              <FaChevronRight aria-hidden="true" />
+            </button>
+          </div>
+        </div>
+      </section>
       <div id="experience">
         <Hero text="Experience & Certification." />
         <Experience />

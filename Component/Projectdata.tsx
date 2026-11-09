@@ -7,7 +7,6 @@ import { FaDatabase, FaServer } from "react-icons/fa6"; // Often requires /fa6 i
 import { SiTypescript } from "react-icons/si";
 import projectImage from "../src/assets/Project.png";
 import projectImage2 from "../src/assets/Project2.png";
-import Button from "./Button.tsx";
 
 // Note: react-icons/fa has no dedicated PostgreSQL or Express brand icons.
 // FaDatabase stands in for PostgreSQL and FaServer stands in for Express below.
@@ -20,6 +19,7 @@ const projectsData = [
     title: "Garden Inn",
     alt: "Garden Inn hotel booking platform preview",
     imageUrl: [projectImage],
+    projectUrl: "https://garden-inn-project.vercel.app/",
 
     description:
       "A hotel booking platform that lets guests search availability, compare rooms, and reserve stays in a few clicks, with a dashboard for property owners to manage listings and bookings.",
@@ -37,20 +37,13 @@ const projectsData = [
       <FaNodeJs key="node" title="Node.js" />,
       <FaServer key="express" title="Express" />,
     ],
-    button: (
-      <Button
-        text="View Project"
-        onClick={() =>
-          window.open("https://garden-inn-project.vercel.app/", "_blank")
-        }
-      />
-    ),
   },
   {
     id: 2,
     title: "Yeka MKC",
     alt: "Project 2 preview",
     imageUrl: [projectImage2],
+    projectUrl: "https://yeka-mkc.vercel.app/",
     description:
       "A Local church website that gives information about the church services and accepts fundraise payments through chapa.",
     list: [
@@ -70,12 +63,6 @@ const projectsData = [
       <FaNodeJs key="node" title="Node.js" />,
       <FaServer key="express" title="Express" />,
     ],
-    button: (
-      <Button
-        text="View Project"
-        onClick={() => window.open("https://yeka-mkc.vercel.app/", "_blank")}
-      />
-    ),
   },
 ];
 export default projectsData;

@@ -694,7 +694,7 @@ a {
   box-sizing: border-box;
   backdrop-filter: blur(10px); /* Blurs whatever is behind it */
   border: 1px solid rgba(0, 191, 255, 0.2);
-  margin-bottom: 200px;
+  margin-bottom: 1.5rem;
   background:
     linear-gradient(
       135px,
@@ -818,7 +818,84 @@ a {
   box-shadow: 0 14px 30px rgba(45, 125, 255, 0.32);
 }
 
-.project-description-container > div span {
+.project-view-button {
+  width: fit-content;
+  gap: 0.65rem;
+  min-height: 50px;
+  padding: 0 1.35rem;
+  border-radius: 9999px;
+  color: #03131f;
+  font-size: 0.95rem;
+  font-weight: 700;
+  box-shadow: 0 12px 28px rgba(45, 125, 255, 0.3);
+}
+
+.project-view-button svg {
+  width: 15px;
+  height: 15px;
+  transition: transform 180ms ease;
+}
+
+.project-view-button:hover svg {
+  transform: translate(2px, -2px);
+}
+
+.project-carousel {
+  width: min(100% - 2rem, 1200px);
+  margin: 0 auto 5rem;
+}
+
+.project-carousel .projects {
+  margin-bottom: 0;
+}
+
+.project-carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem auto 0;
+}
+
+.project-carousel-button {
+  display: inline-flex;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(56, 189, 248, 0.45);
+  border-radius: 50%;
+  background: rgba(11, 20, 38, 0.9);
+  color: #7dd3fc;
+  cursor: pointer;
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.project-carousel-button:hover {
+  transform: translateY(-2px);
+  border-color: #38bdf8;
+  background: #112240;
+  color: #ffffff;
+}
+
+.project-carousel-button:focus-visible,
+.project-view-button:focus-visible {
+  outline: 2px solid #7dd3fc;
+  outline-offset: 4px;
+}
+
+.project-carousel-position {
+  min-width: 7.5rem;
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.project-icons span {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -832,7 +909,7 @@ a {
   transition: all 0.2s ease-in-out;
 }
 
-.project-description-container > div span:hover {
+.project-icons span:hover {
   background-color: #112240;
   border-color: #38bdf8;
   color: #ffffff;
@@ -863,12 +940,17 @@ a {
 }
 
 @media (max-width: 480px) {
+  .project-carousel {
+    width: min(100% - 1rem, 1200px);
+    margin-bottom: 3rem;
+  }
+
   .projects {
     padding: 1.25rem;
     border-radius: 14px;
   }
 
-  .project-description-container > div span {
+  .project-icons span {
     width: 34px;
     height: 34px;
     font-size: 1rem;

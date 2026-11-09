@@ -1,3 +1,5 @@
+import { FaArrowUpRightFromSquare } from "react-icons/fa6";
+
 interface ProjectProps {
   imageUrl: string[];
   title: string;
@@ -5,8 +7,8 @@ interface ProjectProps {
   description: string;
   list: string[];
   id: number;
-  icon: React.ReactNode[]; // or string[] if you're using plain text/emoji instead of icon components}
-  button?: React.ReactNode;
+  icon: React.ReactNode[];
+  projectUrl: string;
 }
 
 function Projects({
@@ -15,9 +17,8 @@ function Projects({
   alt,
   description,
   list,
-  id,
   icon,
-  button,
+  projectUrl,
 }: ProjectProps) {
   return (
     <div className="projects" data-aos="fade-up" data-aos-delay="100">
@@ -27,9 +28,7 @@ function Projects({
         ))}
       </div>
       <div className="project-description-container">
-        <h3 key={id} className="project-title">
-          {title}
-        </h3>
+        <h3 className="project-title">{title}</h3>
         <p className="project-description">{description}</p>
 
         <ul>
@@ -43,7 +42,17 @@ function Projects({
           ))}
         </div>
 
-        {button ? <div className="project-actions">{button}</div> : null}
+        <div className="project-actions">
+          <a
+            className="Btn project-view-button"
+            href={projectUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>View live project</span>
+            <FaArrowUpRightFromSquare aria-hidden="true" />
+          </a>
+        </div>
       </div>
     </div>
   );
