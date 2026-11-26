@@ -1,9 +1,9 @@
 
-import Meh from "../src/assets/meeh.jpg";
+import portfolioImage from "../src/assets/image.png";
 function Image() {
   return (
     <div className="image-container">
-      <img src={Meh} alt="Meh" className="image" />
+      <img src={portfolioImage} alt="Cat wearing glasses" className="image" />
     </div>
   );
 }
