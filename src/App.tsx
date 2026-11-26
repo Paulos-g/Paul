@@ -92,8 +92,8 @@ function App() {
                 />
               </a>
               <a
-                href="/Certificates/Paulos_Girmachew_CV.docx"
-                download="Paulos_Girmachew_CV.docx"
+                href="/Certificates/Paulos_Girmachew_CV_Proffesional.pdf"
+                download="Paulos_Girmachew_CV_Proffesional.pdf"
               >
                 <Button
                   className="btn"
@@ -137,7 +137,8 @@ function App() {
               aria-label="Previous project"
               onClick={() =>
                 setCurrentProjectIndex(
-                  (index) => (index - 1 + projectsData.length) % projectsData.length,
+                  (index) =>
+                    (index - 1 + projectsData.length) % projectsData.length,
                 )
               }
             >
@@ -151,7 +152,9 @@ function App() {
               className="project-carousel-button"
               aria-label="Next project"
               onClick={() =>
-                setCurrentProjectIndex((index) => (index + 1) % projectsData.length)
+                setCurrentProjectIndex(
+                  (index) => (index + 1) % projectsData.length,
+                )
               }
             >
               <FaChevronRight aria-hidden="true" />
